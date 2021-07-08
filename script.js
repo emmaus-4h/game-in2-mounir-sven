@@ -21,8 +21,6 @@ const UITLEG = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
 
-
-
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
@@ -61,7 +59,7 @@ function draw() {
     } else {
       bubbles[i].changeColor(100);
     }
-     bubbles[i].show();
+    bubbles[i].show();
   }
 }
 /**
@@ -90,14 +88,6 @@ class Bubble {
     }
   }
 
-function mousePressed() {
-  for (let i = bubbles.length - 1; i >= 0; i--) {
-    if (bubbles[i].contains(mouseX, mouseY)) {
-      bubbles.splice(i, 1);
-    }
-  }
-}
-
   show() {
     stroke(255);
     strokeWeight(4);
@@ -106,6 +96,15 @@ function mousePressed() {
   }
 }
 
+
+function mousePressed() {
+  for (let i = bubbles.length - 1; i >= 0; i--) {
+    if (bubbles[i].contains(mouseX, mouseY)) {
+      bubbles.splice(i, 1);
+    }
+  }
+}
+/*
 function draw() {
   switch (spelStatus) {
     case SPELEN:
@@ -134,3 +133,4 @@ function draw() {
       break;
   }
 }
+*/
